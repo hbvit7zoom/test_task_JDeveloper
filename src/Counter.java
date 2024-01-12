@@ -6,7 +6,7 @@ public class Counter {
     StreamWork stream;
     public Counter() {
         stream = new StreamWork();
-        counter = stream.get_count();
+        counter = stream.getCount();
         readyToWork = true;
     }
 

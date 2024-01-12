@@ -10,7 +10,7 @@ public class StreamWork implements Serializable{
             this.cnt = 0;
         }
     }
-    public int get_count() {
+    public int getCount() {
         return this.cnt;
     }
     public final void saveCountToFile(int cnt) throws IOException{
