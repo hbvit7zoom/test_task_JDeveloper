@@ -8,51 +8,41 @@ public class Counter {
         stream = new StreamWork();
         counter = stream.get_count();
         readyToWork = true;
-    };
+    }
 
-    public int get_counter(){
-        return this.counter;
-    }
-    public void set_counter(int counter){
-        this.counter = counter;
-    }
-    public boolean run(String cmd) {
-        boolean isWorking = true;
-        switch (cmd) {
+    public void run(String cmd) {
+        switch (cmd.toLowerCase()) {
             case ("/inc"):
-                inc_counter();
+                incCounter();
                 break;
             case ("/stop"):
-                stop_counter();
-                isWorking = false;
+                stopCounter();
                 break;
             case ("/reset"):
-                reset_counter();
+                resetCounter();
                 break;
             default:
                 System.out.println("Введите другую команду");
                 break;
         }
-        return isWorking;
     }
-    private void inc_counter() {
+    private void incCounter() {
         this.counter++;
         System.out.println("Текущее состояние счетчика: " + this.counter);
     }
-    private void stop_counter(){
+    private void stopCounter(){
         System.out.println("Текущее состояние счетчика: " + this.counter);
         System.out.println("Завершение работы");
         try {
             stream.saveCountToFile(this.counter);
         }
         catch (IOException e){
-            e.printStackTrace();
+            System.out.println("Данные не сохранены");
         }
         this.readyToWork = false;
     }
-    private void reset_counter(){
+    private void resetCounter(){
         this.counter = 0;
         System.out.println("Текущее состояние счетчика: " + this.counter);
     }
-
 }
