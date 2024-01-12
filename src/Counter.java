@@ -28,10 +28,10 @@ public class Counter {
     }
     private void incCounter() {
         this.counter++;
-        System.out.println("Текущее состояние счетчика: " + this.counter);
+        System.out.println("Текущее значение счетчика: " + this.counter);
     }
     private void stopCounter(){
-        System.out.println("Текущее состояние счетчика: " + this.counter);
+        System.out.println("Текущее значение счетчика: " + this.counter);
         System.out.println("Завершение работы");
         try {
             stream.saveCountToFile(this.counter);
@@ -43,6 +43,6 @@ public class Counter {
     }
     private void resetCounter(){
         this.counter = 0;
-        System.out.println("Текущее состояние счетчика: " + this.counter);
+        System.out.println("Текущее значение счетчика: " + this.counter);
     }
 }

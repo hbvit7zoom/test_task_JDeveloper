@@ -29,6 +29,7 @@ public class StreamWork implements Serializable{
             System.out.printf("Счетчик загружен, значение '%d'\n", this.cnt);
         } catch(IOException e) {
             this.cnt = 0;
+            System.out.println("Текущее значение счетчика: " + this.cnt);
         }
         return this.cnt;
     }
